@@ -15,12 +15,7 @@ const path = require("path");
 
 const port = process.env.PORT || 8000;
 
-// Examples
 // schema per data type
-const assetSchema = new mongoose.Schema({
-    name: String
-});
-const Assets = mongoose.model('assets', assetSchema);
 
 // User
 const userSchema = new mongoose.Schema({
@@ -29,19 +24,56 @@ const userSchema = new mongoose.Schema({
 })
 const Users = mongoose.model('users', userSchema);
 
+// deliveryType - Vertual or in-person
+const deliveryTypeSchema = new mongoose.Schema({
+    deliveryType: String,
+})
+const deliveryTypes = mongoose.model('deliveryTypes', deliveryTypeSchema);
+
+// typeOfEvent
+const eventTypeSchema = new mongoose.Schema({
+    eventType: String,
+})
+const eventTypes = mongoose.model('eventTypes', eventTypeSchema);
+
+// Locations
+// typeOfEvent
+const sapLocationSchema = new mongoose.Schema({
+    sapLocation: String,
+})
+const sapLocations = mongoose.model('sapLocations', sapLocationSchema);
+
 // Posts
-const postSchema = new mongoose.Schema({
-    userName: String,
-    password: String
+const postSchema = new smongoose.Schema({
+    postId: String,
+    userId: [Users.userId],
+    title: String,
+    location: { String },
+    description: String,
+    comment: {
+        "postId": postId,
+        "content": String,
+        "userId": userId,
+        "Date": Date.now(),
+    },
+    likes: Boolean,
+    eventTime: String,
+    deliveryType: [deliveryTypes.deliveryType],
+    sapLocation: [sapLocations.sapLocation],
 })
 const Posts = mongoose.model('posts', postSchema);
+// title of events
+const eventTitleSchema = new mongoose.Schema({
+    evenTitle: String
+})
+const evenTitles = mongoose.model('evenTitles', eventTitleSchema);
 
-// // EventImages
-// const eventImageSchema = new mongoose.Schema({
-//     userName: String,
-//     password: String
-// })
-// const eventImages = mongoose.model('eventImages', eventImageSchema);
+// EventImages
+const eventImageSchema = new mongoose.Schema({
+    image: String,
+    name: String
+})
+const eventImages = mongoose.model('eventImages', eventImageSchema);
 
 // To avoid the call conflict with the front end, we add '/api' ex. '/api/scheduler'
 app.get('/api/assets', (req, res) => {
