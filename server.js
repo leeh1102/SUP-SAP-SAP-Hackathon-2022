@@ -26,9 +26,10 @@ const Assets = mongoose.model('assets', assetSchema);
 const userSchema = new mongoose.Schema({
     username: String,
     password: String,
-
+    userId: String,
+    postIds: [String]
 });
-const Assets = mongoose.model('assets', assetSchema)
+const Users = mongoose.model('users', userSchema)
 
 // Posts
 const userSchema = new mongoose.Schema({
@@ -39,12 +40,12 @@ const userSchema = new mongoose.Schema({
 const Assets = mongoose.model('assets', assetSchema)
 
 // EventImages
-const userSchema = new mongoose.Schema({
-    username: String,
-    password: String,
+const eventImagesSchema = new mongoose.Schema({
+    image: String,
+    names: [String]
 
 });
-const Assets = mongoose.model('assets', assetSchema)
+const EventImages = mongoose.model('event_images', eventImagesSchema);
 
 
 // To avoid the call conflict with the front end, we add '/api' ex. '/api/scheduler'
