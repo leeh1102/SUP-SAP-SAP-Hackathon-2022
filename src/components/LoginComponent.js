@@ -44,6 +44,7 @@ export default function SignIn() {
                             name="email"
                             autoComplete="email"
                             autoFocus
+                            variant="standard"
                         />
                         <TextField
                             margin="normal"
@@ -54,6 +55,7 @@ export default function SignIn() {
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            variant="standard"
                         />
                         <FormControlLabel
                             control={<Checkbox value="remember" color="primary" />}
@@ -63,7 +65,7 @@ export default function SignIn() {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            sx={{ mt: 3, mb: 2, padding: 1.5 }}
+                            sx={{ mt: 3, mb: 2, padding: 1.5, borderRadius: 10 }}
                         >
                             Sign In
                         </Button>
