@@ -13,7 +13,7 @@ async function main() {
 
 const path = require("path");
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8000;
 
 // Examples
 // schema per data type
@@ -24,17 +24,63 @@ const Assets = mongoose.model('assets', assetSchema)
 
 // To avoid the call conflict with the front end, we add '/api' ex. '/api/scheduler'
 app.get('/api/assets', (req, res) => {
-    Assets.find().then(results => {
-        res.json(results);
-    });
+    // .query = asking for query parameter '?'
+    if (req.query.name && req.query.name != "") {
+        Assets.find({ name: req.query.name }).then(results => {
+            res.status(200);
+            res.json(results);
+        }).catch(err => {
+            res.status(500);
+            res.json({ "status": "error", "msg": err.message });
+        });;
+    } else {
+        Assets.find().then(results => {
+            res.status(200);
+            res.json(results);
+        });
+    }
 })
+
 app.post('/api/assets', (req, res) => {
     const newAsset = Assets();
     newAsset.name = req.body.name;
     newAsset.save().then(() => {
+        res.status(200);
         res.json({ "status": "ok" });
-    });
+    }).catch(err => {
+        res.status(500);
+        res.json({ "status": "error", "msg": err.message });
+    });;
 })
+
+app.put('/api/assets', (req, res) => {
+    const targetId = req.body._id;
+    var newValues = { $set: { name: req.body.name } }
+    Assets.updateOne({ "_id": targetId }, newValues).then(() => {
+        res.status(200);
+        res.json({ "status": "ok" });
+    }).catch(err => {
+        res.status(500);
+        res.json({ "status": "error", "msg": err.message });
+    });;
+})
+
+app.delete('/api/assets', (req, res) => {
+    const targetId = req.query.id;
+    if (targetId && targetId != "") {
+        Assets.deleteOne({ "_id": targetId }).then(() => {
+            res.status(200);
+            res.json({ "status": "ok" });
+        }).catch(err => {
+            res.status(500);
+            res.json({ "status": "error", "msg": err.message });
+        });
+    } else {
+        res.status(500);
+        res.json({ "status": "error" });
+    }
+})
+
 
 
 if (process.env.NODE_ENV === "production") {
