@@ -3,7 +3,12 @@ const app = express();
 
 const path = require("path");
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
+
+// To avoid the call conflict with the front end, we add '/api' ex. '/api/scheduler'
+app.get('/api', (req, res) => {
+    res.json("hello api")
+})
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static('build'));
@@ -12,6 +17,7 @@ if (process.env.NODE_ENV === "production") {
     })
 }
 
+// Otherwise, go to the FE
 app.listen(port, (err) => {
     if (err) return console.loge(err);
     console.log("Server running on port: ", port);
