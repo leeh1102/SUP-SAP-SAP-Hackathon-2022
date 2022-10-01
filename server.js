@@ -19,10 +19,12 @@ const port = process.env.PORT || 8000;
 
 // User
 const userSchema = new mongoose.Schema({
-    userName: String,
-    password: String
-})
-const Users = mongoose.model('users', userSchema);
+    username: String,
+    password: String,
+    userId: String,
+    postIds: [String]
+});
+const Users = mongoose.model('users', userSchema)
 
 // deliveryType - Vertual or in-person
 const deliveryTypeSchema = new mongoose.Schema({
@@ -37,7 +39,6 @@ const eventTypeSchema = new mongoose.Schema({
 const eventTypes = mongoose.model('eventTypes', eventTypeSchema);
 
 // Locations
-// typeOfEvent
 const sapLocationSchema = new mongoose.Schema({
     sapLocation: String,
 })
@@ -62,6 +63,7 @@ const postSchema = new smongoose.Schema({
     sapLocation: [sapLocations.sapLocation],
 })
 const Posts = mongoose.model('posts', postSchema);
+
 // title of events
 const eventTitleSchema = new mongoose.Schema({
     evenTitle: String
@@ -75,6 +77,35 @@ const eventImageSchema = new mongoose.Schema({
 })
 const eventImages = mongoose.model('eventImages', eventImageSchema);
 
+app.put('/api/assets', (req, res) => {
+    const targetId = req.body._id;
+    var newValues = { $set: { name: req.body.name } }
+    Assets.updateOne({ "_id": targetId }, newValues).then(() => {
+        res.status(200);
+        res.json({ "status": "ok" });
+    }).catch(err => {
+        res.status(500);
+        res.json({ "status": "error", "msg": err.message });
+    });;
+})
+
+app.delete('/api/assets', (req, res) => {
+    const targetId = req.query.id;
+    if (targetId && targetId != "") {
+        Assets.deleteOne({ "_id": targetId }).then(() => {
+            res.status(200);
+            res.json({ "status": "ok" });
+        }).catch(err => {
+            res.status(500);
+            res.json({ "status": "error", "msg": err.message });
+        });
+    } else {
+        res.status(500);
+        res.json({ "status": "error" });
+    }
+})
+
+// ==============EventImages CRUD functions==============
 // To avoid the call conflict with the front end, we add '/api' ex. '/api/scheduler'
 app.get('/api/assets', (req, res) => {
     // .query = asking for query parameter '?'
