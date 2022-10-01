@@ -24,24 +24,28 @@ const Assets = mongoose.model('assets', assetSchema);
 
 // User
 const userSchema = new mongoose.Schema({
-    userName: String,
-    password: String
-})
-const Users = mongoose.model('users', userSchema);
+    username: String,
+    password: String,
+
+});
+const Assets = mongoose.model('assets', assetSchema)
 
 // Posts
-const postSchema = new mongoose.Schema({
-    userName: String,
-    password: String
-})
-const Posts = mongoose.model('posts', postSchema);
+const userSchema = new mongoose.Schema({
+    username: String,
+    password: String,
 
-// // EventImages
-// const eventImageSchema = new mongoose.Schema({
-//     userName: String,
-//     password: String
-// })
-// const eventImages = mongoose.model('eventImages', eventImageSchema);
+});
+const Assets = mongoose.model('assets', assetSchema)
+
+// EventImages
+const userSchema = new mongoose.Schema({
+    username: String,
+    password: String,
+
+});
+const Assets = mongoose.model('assets', assetSchema)
+
 
 // To avoid the call conflict with the front end, we add '/api' ex. '/api/scheduler'
 app.get('/api/assets', (req, res) => {
