@@ -20,7 +20,28 @@ const port = process.env.PORT || 8000;
 const assetSchema = new mongoose.Schema({
     name: String
 });
-const Assets = mongoose.model('assets', assetSchema)
+const Assets = mongoose.model('assets', assetSchema);
+
+// User
+const userSchema = new mongoose.Schema({
+    userName: String,
+    password: String
+})
+const Users = mongoose.model('users', userSchema);
+
+// Posts
+const postSchema = new mongoose.Schema({
+    userName: String,
+    password: String
+})
+const Posts = mongoose.model('posts', postSchema);
+
+// // EventImages
+// const eventImageSchema = new mongoose.Schema({
+//     userName: String,
+//     password: String
+// })
+// const eventImages = mongoose.model('eventImages', eventImageSchema);
 
 // To avoid the call conflict with the front end, we add '/api' ex. '/api/scheduler'
 app.get('/api/assets', (req, res) => {
