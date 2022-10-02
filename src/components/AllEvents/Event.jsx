@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import React from "react";
 import styles from "./all_events.module.css";
 import puzzle from "../../assets/icons_amenities/puzzle-piece.png";
@@ -10,6 +10,7 @@ import person_icon from "../../assets/event_card_icons/User.svg";
 import time_icon from "../../assets/event_card_icons/Clock.svg";
 import location_icon from "../../assets/event_card_icons/Location.svg";
 import like_icon from "../../assets/event_card_icons/Like.png";
+import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
 
 const Event = ({ post }) => {
   var icon;
@@ -58,6 +59,15 @@ const Event = ({ post }) => {
                         </Button>
         </div>
       </div>
+      <div className={styles.share}>
+        <IconButton
+            aria-label="share"
+            href={`mailto:?subject=Shall we join this event?&body=Check out this link: www.sup-sap.ca/post/23`}
+            target="_blank"
+            title="Share via Email">
+          <IosShareOutlinedIcon />
+        </IconButton>
+        </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from '@mui/material';
 import Header from './HeaderComponent';
 import FilterComponent from './FilterComponent';
 import image from '../assets/background.png';
@@ -23,8 +24,19 @@ function MainComponent() {
     return (
         <>
             <Header />
-            <div className='hero'>
-                <img id='hero-img' src={image} alt="hero-halloween" width="100%" />
+            <div className={styles.hero}>
+                <img className={styles.hero_left} src={image} alt="hero-halloween" />
+                <div className={styles.hero_right}>
+                    <h1 className={styles.hero_title}>Pool Table is Available Today from 5:00PM - 6:00PM!</h1>
+                                          <Button
+                            href="/home"
+
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2, padding: 1.5, borderRadius: 10, width:200 }}
+                        >
+                            Sign In
+                        </Button>
+                </div>
             </div>
             <div className={styles.center_body}>
                 <h1 className={styles.h1_title}>Trending This Week</h1>
