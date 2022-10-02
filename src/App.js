@@ -1,7 +1,5 @@
 import { Component, state } from 'react';
 import './App.css';
-import LandingPageComponent from './components/LandingPageComponent';
-import LandingPage from './components/LandingPage/LandingPage';
 import SignIn from './components/SigninComponent';
 import MainComponent from './components/MainComponent';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
