@@ -6,12 +6,21 @@ body {
   line-height: 1.5;
 }
 
-.title {
-  font-size: 32px;
+.h1_title {
+  margin-top: 50px;
 }
 
+<<<<<<< HEAD
 .create_btn {
   display: flex;
   justify-content: center;
   align-items: center;
+=======
+.center_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+>>>>>>> fa8669ab4a5cd67cc3bcc3c9e599179da8efddae
 }
