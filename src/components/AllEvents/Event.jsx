@@ -1,6 +1,15 @@
 import { Button } from "@mui/material";
 import React from "react";
 import styles from "./all_events.module.css";
+import puzzle from "../../assets/icons_amenities/puzzle-piece.png";
+import barbecue from "../../assets/icons_amenities/barbecue.png";
+import billiard from "../../assets/icons_amenities/billiard-ball.png";
+import dumbbell from "../../assets/icons_amenities/dumbbell.png";
+import ping_pong from "../../assets/icons_amenities/ping-pong.png";
+import person_icon from "../../assets/event_card_icons/User.svg";
+import time_icon from "../../assets/event_card_icons/Clock.svg";
+import location_icon from "../../assets/event_card_icons/Location.svg";
+import like_icon from "../../assets/event_card_icons/Like.png";
 
 const Event = ({ post }) => {
   var icon;
@@ -17,28 +26,40 @@ const Event = ({ post }) => {
   }
   var time = post.startTime + " - " + post.endTime;
   return (
-    <div className={styles.eventCard}>
+    <div className={styles.event_card}>
       <div className={styles.front}>
-        <img src={icon} />
+        <img src={icon} className={styles.activity_icon}/>
       </div>
       <div className={styles.middle}>
         <h4 className={styles.event_title}>{post.title}</h4>
         <p className={styles.event_description}>{post.description}</p>
-        <div className={styles.likes}>
-          <img src={personIcon} />
+        <div className={styles.info_container}>
+          <img src={person_icon} className={styles.person_icon} />
+          <p className={styles.participants}>{post.likes} participants</p>
         </div>
       </div>
       <div className={styles.end}>
-        <div>
+        <div className={styles.info_container_first_row}>
           <img src={time_icon} />
+          <p>{time}</p>
         </div>
-        <div>
+        <div className={styles.info_container}>
           <img src={location_icon} />
+          <p>{post.location}</p>
         </div>
         <div>
-          <Button />
+        <Button
+          href="/home"
+          fullWidth
+                            variant="contained"
+                            sx={{ mt: 0, mb: 0, padding: 1.5, borderRadius: 10 , height:30}}
+                        >
+                            RSVP
+                        </Button>
         </div>
       </div>
     </div>
   );
 };
+
+export default Event;
