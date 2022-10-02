@@ -7,6 +7,7 @@ import FeaturedCard from "./FeaturedCard";
 // Styles
 import styles from "./landing_page.module.css";
 import "swiper/css";
+import { Button } from '@mui/material';
 
 const TrendingList = ({ posts }) => {
   console.log(posts);

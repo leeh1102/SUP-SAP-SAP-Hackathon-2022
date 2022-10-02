@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./landing_page.module.css";
-import axios from "axios";
 import puzzle from "../../assets/icons_amenities/puzzle-piece.png";
 import barbecue from "../../assets/icons_amenities/barbecue.png";
 import billiard from "../../assets/icons_amenities/billiard-ball.png";
