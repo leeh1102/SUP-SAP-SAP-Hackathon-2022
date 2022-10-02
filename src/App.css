@@ -17,3 +17,18 @@
   justify-content: center;
   align-items: center;
 }
+
+.trending {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eef1f3;
+}
+
+.all-events {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

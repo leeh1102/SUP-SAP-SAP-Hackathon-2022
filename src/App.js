@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import './App.css';
 import LandingPageComponent from './components/LandingPageComponent';
-import SignIn from './components/LoginComponent';
 import LandingPage from './components/LandingPage/LandingPage';
+import SignIn from './components/SigninComponent';
+import MainComponent from './components/MainComponent';
 
 class App extends Component {
   state = {
@@ -10,7 +11,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.id = setTimeout(() => this.setState({ redirect: true }), 3000);
+    this.id = setTimeout(() => this.setState({ redirect: true }), 1000);
   }
 
   componentWillUnmount() {
@@ -19,7 +20,9 @@ class App extends Component {
 
   render() {
     return this.state.redirect
-      ? <LandingPage/> : <LandingPageComponent />;
+      // ? <SignIn />
+      ? <MainComponent />
+      : <LandingPageComponent />;
   }
 }
 
