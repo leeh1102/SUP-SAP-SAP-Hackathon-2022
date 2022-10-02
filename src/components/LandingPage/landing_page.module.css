@@ -9,7 +9,7 @@ body {
 
 @media screen and (min-width: 1280px) {
     .swiper_container {
-        max-width: 1280px;
+        max-width: 100%;
     }
     .trending_root {
         display: flex;

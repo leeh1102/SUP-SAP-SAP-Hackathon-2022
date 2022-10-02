@@ -18,7 +18,7 @@ const TrendingList = () => {
             navigation
             loop={true}
             spaceBetween={30}
-            slidesPerView={3.2}
+            slidesPerView={3.5}
             centeredSlides={true}
             loopFillGroupWithBlank={true}
             >
