@@ -15,9 +15,11 @@ export default function SignIn() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
+        // eslint-disable-next-line no-console
         console.log({
             email: data.get('email'),
             password: data.get('password'),
+            remember: data.get('remember'),
         });
     };
 
@@ -62,7 +64,6 @@ export default function SignIn() {
                             label="Remember me"
                         />
                         <Button
-                            type="submit"
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2, padding: 1.5, borderRadius: 10 }}
