@@ -15,7 +15,7 @@ const path = require("path");
 const { StringDecoder } = require("string_decoder");
 // const { AddAPhoto } = require("@mui/icons-material");
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 
 // schema per data type
 // User
