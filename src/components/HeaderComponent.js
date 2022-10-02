@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import image from '../assets/SAP_logo_-_Brandlogos.net.svg';
+import image from '../assets/Logo.png';
 
 export default function Header() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -29,25 +29,15 @@ export default function Header() {
                     boxShadow: 'none'
                 }}
             >
-                <Toolbar>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Box
                         component="img"
                         sx={{
-                            height: 40,
+                            width: 120,
                         }}
                         alt="logo"
                         src={image}
                     />
-                    <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{
-                            flexGrow: 1,
-                            color: "#006fbb",
-                            fontWeight: 700
-                        }}>
-                        SUP SAP
-                    </Typography>
                     <IconButton
                         size="large"
                         aria-label="account of current user"
