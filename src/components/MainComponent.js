@@ -3,15 +3,10 @@ import Header from './HeaderComponent';
 import FilterComponent from './FilterComponent';
 import image from '../assets/background.png';
 import TrendingList from './LandingPage/TrendingList';
-import AllEventsComponent from './AllEventsComponent';
 import styles from './main_component.module.css';
-<<<<<<< HEAD
 import { AddCircleOutline } from '@mui/icons-material';
 import { Button } from '@mui/material';
-
-=======
 import AllEvents from './AllEvents/AllEvents';
->>>>>>> fa8669ab4a5cd67cc3bcc3c9e599179da8efddae
 
 function MainComponent() {
     const [posts, setPosts] = useState([]);
