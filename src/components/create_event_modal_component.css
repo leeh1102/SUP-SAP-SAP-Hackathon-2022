@@ -1,0 +1,14 @@
+.input_tag {
+  padding: 1rem 3rem;
+  box-shadow: 3px 3px 3px 31px 13px lightgray;
+  margin: 1rem;
+  border: 1px soild;
+  border-radius: 3px;
+}
+
+.btn {
+  padding: 0.5rem 3rem;
+  background-color: lightblue;
+  border-radius: 0.5rem;
+  border-color: transparent;
+}

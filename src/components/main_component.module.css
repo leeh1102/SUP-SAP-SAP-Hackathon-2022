@@ -10,6 +10,12 @@ body {
   margin-top: 50px;
 }
 
+.create_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .center_body {
   display: flex;
   flex-direction: column;
