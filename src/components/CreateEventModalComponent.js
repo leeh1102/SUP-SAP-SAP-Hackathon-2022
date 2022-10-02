@@ -59,11 +59,12 @@ const CreateEventModalComponent = () => {
     const handleClose = () => setOpen(false);
 
     const [values, setValues] = React.useState({
-        title: 'Join 3D Printing Workshop hosted by D-shop!',
-        description: 'Learn and experience 3D printing with our 3D printing experts!',
-        eventDate: '12/04/2022',
-        startTime: '15:00',
-        deliveryType: 'In-office',
+        title: 'Pot Luck Party on Thanksgiving',
+        description: 'Food, fun, and friends!',
+        eventDate: '10/10/2022',
+        startTime: '18:30',
+        endTime: '21:00',
+        deliveryType: 'Out-of-office',
     })
 
     const handleChange = (prop) => (event) => {
@@ -103,7 +104,7 @@ const CreateEventModalComponent = () => {
                     Create Your Own
                 </Button>
                 <Dialog open={open} onClose={handleClose} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <DialogTitle>Optional sizes</DialogTitle>
+                    <DialogTitle>Create Your Own Event!</DialogTitle>
                     <DialogContent >
                         <TextField
                             name="title"
