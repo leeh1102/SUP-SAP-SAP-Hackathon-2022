@@ -105,7 +105,12 @@ const AllEventsComponent = () => {
                                     <IconButton aria-label="add to favorites">
                                         <FavoriteIcon />
                                     </IconButton>
-                                    <IconButton aria-label="share">
+                                    <IconButton
+                                        aria-label="share"
+                                        href={`mailto:?subject=Shall we join this event?&body=Check out this link: www.sup-sap.ca/post/23`}
+                                        target="_blank"
+                                        title="Share via Email"
+                                    >
                                         <ShareIcon />
                                     </IconButton>
                                     <ExpandMore

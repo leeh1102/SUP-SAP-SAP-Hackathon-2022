@@ -9,3 +9,9 @@ body {
 .title {
   font-size: 32px;
 }
+
+.create_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
