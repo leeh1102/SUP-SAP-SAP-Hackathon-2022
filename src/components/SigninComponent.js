@@ -65,6 +65,7 @@ export default function SignIn() {
                             label="Remember me"
                         />
                         <Button
+                            href="/home"
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2, padding: 1.5, borderRadius: 10 }}
