@@ -49,6 +49,7 @@ const postSchema = new mongoose.Schema({
 
 })
 const Posts = mongoose.model('posts', postSchema);
+
 // User CRED
 app.get('/api/users', (req, res) => {
     // .query = asking for query parameter '?'
