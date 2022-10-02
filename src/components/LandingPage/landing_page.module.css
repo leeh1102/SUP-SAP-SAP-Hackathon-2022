@@ -8,14 +8,36 @@ body {
 
 
 @media screen and (min-width: 1280px) {
+    .hero {
+        height: 50vh;
+    }
     .swiper_container {
         max-width: 100%;
     }
+
+    .addNewButtonContainer {
+        width: 1080px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 40px;
+    }
+
+    .addNewButton {
+        margin-right: 0 !important;
+    }
+
     .trending_root {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 40px;
+
+    }
+
+    .trending_rootTitle {
+        margin-bottom: 30px;
     }
 
     .card_root {

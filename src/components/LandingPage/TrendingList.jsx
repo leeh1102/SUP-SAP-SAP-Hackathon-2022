@@ -7,11 +7,12 @@ import FeaturedCard from "./FeaturedCard";
 // Styles
 import styles from './landing_page.module.css';
 import "swiper/css";
+import { Button } from '@mui/material';
 
 const TrendingList = () => {
     return (
         <div className={styles.trending_root}>
-        <h1>Trending This Week</h1>
+        <h1 className={styles.trending_rootTitle}>Trending This Week</h1>
         <div className={styles.swiper_container}>
              <Swiper
             pagination
@@ -49,9 +50,10 @@ const TrendingList = () => {
                 </SwiperSlide>
         </Swiper>
         </div>
-       
+        <div className={styles.addNewButtonContainer}>
+           <Button className={styles.addNewButton} variant="contained">Add New</Button>
         </div>
-
+</div>
     );
 };
 export default TrendingList;
