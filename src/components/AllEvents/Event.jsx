@@ -25,7 +25,7 @@ const Event = ({ post }) => {
   } else if (post.location == "Ping Pong Table") {
     icon = ping_pong;
   }
-  var time = post.startTime + " - " + post.endTime;
+  var time = post.eventDate + ", " + post.startTime + " - " + post.endTime;
   return (
     <div className={styles.event_card}>
       <div className={styles.front}>

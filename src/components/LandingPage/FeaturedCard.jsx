@@ -19,7 +19,7 @@ const FeaturedCard = ({ post }) => {
   } else if (post.location == "Ping Pong Table") {
     icon = ping_pong;
   }
-  var time = post.startTime + " - " + post.endTime;
+  var time = post.eventDate + ", " + post.startTime + " - " + post.endTime;
   return (
     <div className={styles.card_root}>
       <div className={styles.card_info}>
