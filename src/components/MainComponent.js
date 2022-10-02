@@ -4,6 +4,7 @@ import FilterComponent from './FilterComponent';
 import image from '../assets/background.png';
 import TrendingList from './LandingPage/TrendingList';
 import AllEventsComponent from './AllEventsComponent';
+import styles from './main_component.module.css';
 
 function MainComponent() {
     const [posts, setPosts] = useState([]);
@@ -28,7 +29,7 @@ function MainComponent() {
             </div>
             <TrendingList posts={posts} />
             <div className='all-events'>
-                <h2>All Events</h2>
+                <h2 className={styles.title}>All Events</h2>
                 <div className='filter-button-group'>
                     <FilterComponent />
                 </div>
