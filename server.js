@@ -164,7 +164,7 @@ app.post('/api/comments', (req, res) => {
     Posts.findOne({ _id: req.body.postId }).then(result => {
         const newComment = {};
         newComment.content = req.body.content;
-        newComment.createdAt = new Date();
+        newComment.createdAt = Date();
         newComment.userId = req.body.userId;
         result.comment.push(newComment);
         result.save().then(() => {
