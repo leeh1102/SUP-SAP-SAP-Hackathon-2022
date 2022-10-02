@@ -6,7 +6,6 @@ import image from '../assets/background.png';
 import TrendingList from './LandingPage/TrendingList';
 import styles from './main_component.module.css';
 import { AddCircleOutline } from '@mui/icons-material';
-import { Button } from '@mui/material';
 import AllEvents from './AllEvents/AllEvents';
 
 function MainComponent() {
@@ -29,14 +28,14 @@ function MainComponent() {
                 <img className={styles.hero_left} src={image} alt="hero-halloween" />
                 <div className={styles.hero_right}>
                     <h1 className={styles.hero_title}>Pool Table is Available Today from 5:00PM - 6:00PM!</h1>
-                                          <Button
+                    <Button
                             href="/home"
-
+                            style={{fontSize:20, fontWeight:600}}
                             variant="contained"
                             sx={{ mt: 3, mb: 2, padding: 1.5, borderRadius: 10, width:200 }}
                         >
-                            Sign In
-                        </Button>
+                            RSVP
+                    </Button>
                 </div>
             </div>
             <div className={styles.center_body}>
