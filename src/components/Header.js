@@ -56,7 +56,9 @@ export default function Header() {
                         onClick={handleMenu}
                         sx={{ color: "#006fbb" }}
                     >
-                        <AccountCircle />
+                        <AccountCircle
+                            sx={{ fontSize: 40 }}
+                        />
                     </IconButton>
                     <Menu
                         id="menu-appbar"
