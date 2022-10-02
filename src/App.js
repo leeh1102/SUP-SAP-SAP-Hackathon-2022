@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.css';
 import LandingPageComponent from './components/LandingPageComponent';
 import SignIn from './components/LoginComponent';
+import LandingPage from './components/LandingPage/LandingPage';
 
 class App extends Component {
   state = {
@@ -18,7 +19,7 @@ class App extends Component {
 
   render() {
     return this.state.redirect
-      ? <SignIn /> : <LandingPageComponent />;
+      ? <LandingPage/> : <LandingPageComponent />;
   }
 }
 
