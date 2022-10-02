@@ -3,8 +3,6 @@ import './App.css';
 import SignIn from './components/SigninComponent';
 import MainComponent from './components/MainComponent';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import axios from "axios";
-
 
 
 function App() {
