@@ -5,6 +5,7 @@ import image from '../assets/background.png';
 import TrendingList from './LandingPage/TrendingList';
 import AllEventsComponent from './AllEventsComponent';
 import styles from './main_component.module.css';
+import AllEvents from './AllEvents/AllEvents';
 
 function MainComponent() {
     const [posts, setPosts] = useState([]);
@@ -25,15 +26,14 @@ function MainComponent() {
             <div className='hero'>
                 <img id='hero-img' src={image} alt="hero-halloween" width="100%" />
             </div>
-            <TrendingList posts={posts} />
-            <div className='all-events'>
-                <h2 className={styles.title}>All Events</h2>
-                <div className='filter-button-group'>
-                    <FilterComponent />
-                </div>
-                <div className="all-events-grid-view">
-                    <AllEventsComponent />
-                </div>
+            <div className={styles.center_body}>
+                <h1 className={styles.h1_title}>Trending This Week</h1>
+                <TrendingList posts={posts} />
+            </div>
+           
+            <div className={styles.center_body}>
+                <h1 className={styles.h1_title}>All Events</h1>
+                <AllEvents posts={posts} />
             </div>
         </>
     );

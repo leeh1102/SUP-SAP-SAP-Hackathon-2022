@@ -10,12 +10,6 @@ body {
     .swiper_container {
         max-width: 100%;
     }
-    .trending_root {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
 
   .card_root {
     display: flex;

@@ -12,8 +12,6 @@ import { Button } from '@mui/material';
 const TrendingList = ({ posts }) => {
   console.log(posts);
   return (
-    <div className={styles.trending_root}>
-      <h1>Trending This Week</h1>
       <div className={styles.swiper_container}>
         <Swiper
           pagination
@@ -58,7 +56,6 @@ const TrendingList = ({ posts }) => {
           </SwiperSlide> */}
         </Swiper>
       </div>
-    </div>
   );
 };
 export default TrendingList;
