@@ -22,10 +22,8 @@ function MainComponent() {
     return (
         <>
             <Header />
-            {/* <div>{data.name}</div>
-            <div>{data.age}</div> */}
             <div className='hero'>
-                <img src={image} alt="hero-halloween" width="100%" />
+                <img id='hero-img' src={image} alt="hero-halloween" width="100%" />
             </div>
             <TrendingList posts={posts} />
             <div className='all-events'>
