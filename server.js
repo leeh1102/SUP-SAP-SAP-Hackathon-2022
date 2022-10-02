@@ -13,6 +13,7 @@ async function main() {
 
 const path = require("path");
 const { StringDecoder } = require("string_decoder");
+// const { AddAPhoto } = require("@mui/icons-material");
 
 const port = process.env.PORT || 8000;
 
@@ -43,9 +44,11 @@ const postSchema = new mongoose.Schema({
     sapLocation: String,
     postCreatedAt: String,
     isAmenity: Boolean,
+    eventDate: String,
+    postOwner: String
+
 })
 const Posts = mongoose.model('posts', postSchema);
-
 // User CRED
 app.get('/api/users', (req, res) => {
     // .query = asking for query parameter '?'
@@ -118,6 +121,7 @@ app.post('/api/posts', (req, res) => {
     newPost.startTime = req.body.startTime;
     newPost.endTime = req.body.endTime;
     newPost.isAmenity = req.body.isAmenity;
+    newPost.eventDate = req.body.eventDate;
     newPost.postCreatedAt = new Date();
     newPost.save().then(() => {
         res.status(200);

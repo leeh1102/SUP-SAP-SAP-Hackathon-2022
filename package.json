@@ -34,6 +34,7 @@
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",

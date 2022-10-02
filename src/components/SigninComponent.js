@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Box from '@mui/material/Box';
+import { useNavigate } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import image from '../assets/SAP_logo_-_Brandlogos.net.svg';
@@ -12,16 +13,16 @@ import image from '../assets/SAP_logo_-_Brandlogos.net.svg';
 const theme = createTheme();
 
 export default function SignIn() {
+    const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        // eslint-disable-next-line no-console
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-            remember: data.get('remember'),
-        });
+        const routeChange = () => {
+            const path = "/home";
+            navigate(path);
+        }
     };
+
+
 
     return (
         <ThemeProvider theme={theme}>
