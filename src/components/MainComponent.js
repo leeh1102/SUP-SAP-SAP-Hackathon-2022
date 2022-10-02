@@ -1,9 +1,13 @@
 import React from 'react';
-import Header from './Header';
+import Header from './HeaderComponent';
+import FilterComponent from './FilterComponent';
 
 const MainComponent = () => {
     return (
-        <Header />
+        <>
+            <Header />
+            <FilterComponent />
+        </>
     );
 }
 
