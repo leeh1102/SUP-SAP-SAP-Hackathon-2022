@@ -14,7 +14,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 
 const FilterComponent = () => {
-    const [deliveryType, setDeliveryType] = "";
+    const [deliveryType, setDeliveryType] = React.useState("");
     const [date, setDate] = React.useState(new Date());
 
     const handleChangeDeliveryType = (event) => {
@@ -97,6 +97,7 @@ const FilterComponent = () => {
             <Stack
                 direction={{ xs: 'column', sm: 'row' }}
                 spacing={{ xs: 1, sm: 2, md: 4 }}
+                sx={{ padding: 2 }}
             >
                 <ThemeProvider theme={theme}>
                     <FormControl sx={{ minWidth: 200, }} >
