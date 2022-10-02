@@ -1,90 +1,68 @@
-@import url('https://fonts.googleapis.com/css?family=Inter:regular,bold,italic&subset=latin,latin-ext');
+@import url("https://fonts.googleapis.com/css?family=Inter:regular,bold,italic&subset=latin,latin-ext");
 
 body {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-
 @media screen and (min-width: 1280px) {
-    .hero {
-        height: 50vh;
-    }
     .swiper_container {
         max-width: 100%;
     }
-
-    .addNewButtonContainer {
-        width: 1080px;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        margin-top: 40px;
-    }
-
-    .addNewButton {
-        margin-right: 0 !important;
-    }
-
     .trending_root {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 40px;
-
     }
 
-    .trending_rootTitle {
-        margin-bottom: 30px;
-    }
+  .card_root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    height: 250px;
+    background-color: #eef1f3;
+    border: #d7d7d7 solid 1px;
+    border-radius: 20px;
+    padding: 20px;
+  }
 
-    .card_root {
-        display: flex;
-        flex-direction:column;
-        justify-content: center;
-        align-items: center;
-        width: 350px;
-        height: 250px;
-        background-color: #EEF1F3;
-        border: #D7D7D7 solid 1px;
-        border-radius: 20px;
-        padding: 20px;
-    }
+  .card_icon {
+    width: 100px;
+    height: 100px;
+  }
 
-    .card_icon {
-        width: 100px;
-        height: 100px;
-    }
+  .card_headerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
 
-    .card_headerContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
+  .card_TextContainer {
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width: 55%;
+  }
 
-    .card_TextContainer {
-        margin-left: 20px;
-        margin-right: 20px;
-        max-width: 55%;
-    }
+  .card_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
 
-    .card_title {
-        font-size: 20px;
-        font-weight: 600;
-        color: #000000;
-        margin-top: 5px;
-        margin-bottom: 0;
-    }
+  .card_description {
+    margin-top: 5px;
+  }
 
-    .card_description {
-        margin-top: 5px;
-    }
-
-    .card_date {
-        font-weight: 600;
-        margin-bottom: 0;
-    }
+  .card_date {
+    font-weight: 600;
+    margin-bottom: 0;
+  }
 }

@@ -1,29 +1,21 @@
-import { Component } from 'react';
+
 import './App.css';
-import LandingPageComponent from './components/LandingPageComponent';
-import LandingPage from './components/LandingPage/LandingPage';
 import SignIn from './components/SigninComponent';
 import MainComponent from './components/MainComponent';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-class App extends Component {
-  state = {
-    redirect: false
-  }
 
-  componentDidMount() {
-    this.id = setTimeout(() => this.setState({ redirect: true }), 1000);
-  }
 
-  componentWillUnmount() {
-    clearTimeout(this.id);
-  }
 
-  render() {
-    return this.state.redirect
-      // ? <SignIn />
-      ? <MainComponent />
-      : <LandingPageComponent />;
-  }
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<SignIn />} />
+        <Route path='/home' element={<MainComponent />} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
