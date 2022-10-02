@@ -15,24 +15,24 @@ function App() {
     userName: "",
     password: ""
   }
-  componentDidMount = () => {
-    this.getDataPosts();
-  }
-  getDataPosts = () => {
-    axios
-      .get("/api/users")
-      .then((response) => {
-        console.log(response);
-        const data = response.data;
-        this.setState({ posts: data });
+  // componentDidMount = () => {
+  //   this.getDataPosts();
+  // }
+  // getDataPosts = () => {
+  //   axios
+  //     .get("/api/users")
+  //     .then((response) => {
+  //       console.log(response);
+  //       const data = response.data;
+  //       this.setState({ posts: data });
 
-        console.log("Data has been received");
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-  }
+  //       console.log("Data has been received");
+  //     })
+  //     .catch(function (error) {
+  //       // handle error
+  //       console.log(error);
+  //     });
+  // }
   return (
     <Router>
       <Routes>
