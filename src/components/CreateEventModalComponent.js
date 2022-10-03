@@ -59,12 +59,13 @@ const CreateEventModalComponent = () => {
     const handleClose = () => setOpen(false);
 
     const [values, setValues] = React.useState({
-        title: 'Pot Luck Party on Thanksgiving',
-        description: 'Food, fun, and friends!',
+        title: 'Thanksgiving Pot Luck Party',
+        description: '',
         eventDate: '10/10/2022',
-        startTime: '18:30',
-        endTime: '21:00',
+        startTime: '18:00',
+        endTime: '20:00',
         deliveryType: 'Out-of-office',
+
     })
 
     const handleChange = (prop) => (event) => {
