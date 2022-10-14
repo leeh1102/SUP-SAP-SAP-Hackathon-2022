@@ -5,6 +5,7 @@ import barbecue from "../../assets/icons_amenities/barbecue.png";
 import billiard from "../../assets/icons_amenities/billiard-ball.png";
 import dumbbell from "../../assets/icons_amenities/dumbbell.png";
 import ping_pong from "../../assets/icons_amenities/ping-pong.png";
+import pumpkin from '../../assets/icons_amenities/pumpkin.png';
 
 const FeaturedCard = ({ post }) => {
   var icon;
@@ -18,6 +19,8 @@ const FeaturedCard = ({ post }) => {
     icon = billiard;
   } else if (post.location == "Ping Pong Table") {
     icon = ping_pong;
+  } else {
+    icon = pumpkin;
   }
   var time = post.eventDate + ", " + post.startTime + " - " + post.endTime;
   return (

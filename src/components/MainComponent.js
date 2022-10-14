@@ -7,6 +7,7 @@ import TrendingList from './LandingPage/TrendingList';
 import styles from './main_component.module.css';
 import { AddCircleOutline } from '@mui/icons-material';
 import AllEvents from './AllEvents/AllEvents';
+import CreateEventModalComponent from './CreateEventModalComponent';
 
 function MainComponent() {
     const [posts, setPosts] = useState([]);
@@ -29,31 +30,20 @@ function MainComponent() {
                 <div className={styles.hero_right}>
                     <h1 className={styles.hero_title}>Pool Table is Available Today from 5:00PM - 6:00PM!</h1>
                     <Button
-                            href="/home"
-                            style={{fontSize:20, fontWeight:600}}
-                            variant="contained"
-                            sx={{ mt: 3, mb: 2, padding: 1.5, borderRadius: 10, width:200 }}
-                        >
-                            RSVP
+                        href="/home"
+                        style={{ fontSize: 20, fontWeight: 600 }}
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2, padding: 1.5, borderRadius: 10, width: 200 }}
+                    >
+                        RSVP
                     </Button>
                 </div>
             </div>
             <div className={styles.center_body}>
                 <h1 className={styles.h1_title}>Trending This Week</h1>
                 <TrendingList posts={posts} />
-                <div className={styles.create_btn}>
-                    <Button
-                        variant="contained"
-                        size="large"
-                        color="primary"
-                        sx={{ backgroundColor: "#006fbb", m: 2, mt: 4, p: 2, pr: 3, pl: 3, borderRadius: 20 }}
-                    >
-                        <AddCircleOutline sx={{ mr: 1 }} />
-                        Create Your Own
-                    </Button>
-                </div>
+                <CreateEventModalComponent />
             </div>
-
             <div className={styles.center_body}>
                 <h1 className={styles.h1_title}>All Events</h1>
                 <div className='filter-button-group'>
