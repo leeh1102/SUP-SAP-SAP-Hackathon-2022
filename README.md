@@ -1,6 +1,6 @@
 # SUP SAP
 
-A SAP Hackathon project of boosting the hybrid work environment. This web application provides a unified platform to maximize the utilization of SAP's amenities by promoting them and encouraging employees to create internal and external social events with the amenities. The target users are from any individual employees to a community at SAP
+A SAP Hackathon project of boosting the hybrid work environment. This web application provides a unified platform to maximize the utilization of SAP's amenities by promoting them and encouraging employees to create internal and external social events with the amenities. The target users are from any individual employees to any size of communities at SAP
 
 
 ## Getting Started
